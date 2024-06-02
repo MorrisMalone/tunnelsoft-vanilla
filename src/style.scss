@@ -1,0 +1,53 @@
+@import 'ress';
+
+html {
+    min-height: 100%;
+    display: flex;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#app {
+    width: 100%;
+
+    > .slider-container {
+        display: grid;
+        grid-template-columns: auto fit-content(100%) auto;
+        grid-template-areas:
+            "previous image next"
+            "pagination pagination pagination";
+        justify-items: center;
+        gap: 20px;
+        max-width: 1200px;
+
+        > .image-container {
+            width: 100%;
+            max-width: 80vw;
+            padding: 20px;
+            grid-area: image;
+
+            > .image {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        > .previous {
+            grid-area: previous;
+        }
+
+        > .next {
+            grid-area: next;
+        }
+
+        > .pagination {
+            grid-area: pagination;
+        }
+    }
+}
